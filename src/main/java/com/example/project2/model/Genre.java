@@ -17,4 +17,8 @@ public class Genre {
     @NotBlank(message = "Название жанра не может быть пустым")
     @Size(min = 2, max = 255, message = "Название жанра должно быть от 2 до 255 символов")
     private String name;
+
+    public @NotBlank(message = "Название жанра не может быть пустым") @Size(min = 2, max = 255, message = "Название жанра должно быть от 2 до 255 символов") String getName() {
+        return name;
+    }
 }

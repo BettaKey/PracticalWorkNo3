@@ -2,7 +2,7 @@ spring:
   config:
     name: project2
   datasource:
-    url: jdbc:postgresql://localhost:5432/lbry_db
+    url: jdbc:postgresql://localhost:5432/lbry_db1
     username: postgres
     password: 123
     driver-class-name: org.postgresql.Driver

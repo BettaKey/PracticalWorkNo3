@@ -15,15 +15,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @Controller
 @RequestMapping("/books")
 public class BookController {
 
     @Autowired
     private BookService bookService;
+
     @Autowired
     private AuthorService authorService;
+
     @Autowired
     private GenreService genreService;
 
@@ -64,5 +65,29 @@ public class BookController {
     public String deleteBook(@PathVariable Long id) {
         bookService.deleteBook(id);
         return "redirect:/books";
+    }
+
+    @PostMapping("/addAuthor/{bookId}")
+    public String addAuthorToBook(@PathVariable Long bookId, @RequestParam Long authorId) {
+        bookService.addAuthorToBook(bookId, authorId);
+        return "redirect:/books/{bookId}";
+    }
+
+    @PostMapping("/removeAuthor/{bookId}/{authorId}")
+    public String removeAuthorFromBook(@PathVariable Long bookId, @PathVariable Long authorId) {
+        bookService.removeAuthorFromBook(bookId, authorId);
+        return "redirect:/books/{bookId}";
+    }
+
+    @PostMapping("/addGenre/{bookId}")
+    public String addGenreToBook(@PathVariable Long bookId, @RequestParam Long genreId) {
+        bookService.addGenreToBook(bookId, genreId);
+        return "redirect:/books/{bookId}";
+    }
+
+    @PostMapping("/removeGenre/{bookId}/{genreId}")
+    public String removeGenreFromBook(@PathVariable Long bookId, @PathVariable Long genreId) {
+        bookService.removeGenreFromBook(bookId, genreId);
+        return "redirect:/books/{bookId}";
     }
 }

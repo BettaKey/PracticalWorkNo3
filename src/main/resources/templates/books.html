@@ -14,16 +14,19 @@
         <th>Жанр</th>
         <th></th>
     </tr>
+
     <tr th:each="book : ${books}">
         <td th:text="${book.id}"></td>
         <td th:text="${book.title}"></td>
-        <td th:text="${book.author.name}"></td>
-        <td th:text="${book.genre.name}"></td>
+        <td th:text="${book.getAuthorsAsString()}"></td>
+        <td th:text="${book.getGenresAsString()}"></td>
         <td>
             <a th:href="@{/books/{id}(id=${book.id})}">Подробнее</a>
             <a th:href="@{/books/delete/{id}(id=${book.id})}">Удалить</a>
         </td>
     </tr>
+
+
 </table>
 
 <a href="/books/add">Добавить книгу</a>

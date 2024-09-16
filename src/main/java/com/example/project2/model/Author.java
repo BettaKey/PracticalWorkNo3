@@ -19,4 +19,9 @@ public class Author {
     private String name;
 
     private Boolean deleted = false;
+
+
+    public @NotBlank(message = "Имя автора не может быть пустым") @Size(min = 2, max = 255, message = "Имя автора должно быть от 2 до 255 символов") String getName() {
+        return name;
+    }
 }
