@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Автор</title>
+</head>
+<body>
+<h1>Информация об авторе</h1>
+
+<p><b>ID:</b>  <span th:text="${author.id}"></span></p>
+<p><b>Имя:</b> <span th:text="${author.name}"></span></p>
+
+<a href="/authors">Вернуться к списку авторов</a>
+
+</body>
+</html>

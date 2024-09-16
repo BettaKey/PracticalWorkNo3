@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Выданная книга</title>
+</head>
+<body>
+<h1>Информация о выданной книге</h1>
+
+<p><b>ID:</b>  <span th:text="${issuedBook.id}"></span></p>
+<p><b>Книга:</b> <span th:text="${issuedBook.book.title}"></span></p>
+<p><b>Читатель:</b> <span th:text="${issuedBook.reader.name + ' ' + issuedBook.reader.surname}"></span></p>
+<p><b>Дата выдачи:</b> <span th:text="${issuedBook.issueDate}"></span></p>
+<p><b>Дата возврата:</b> <span th:text="${issuedBook.returnDate}"></span></p>
+
+<a href="/issuedBooks">Вернуться к списку выданных книг</a>
+
+</body>
+</html>

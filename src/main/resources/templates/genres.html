@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Жанры</title>
+</head>
+<body>
+<h1>Список жанров</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th></th>
+    </tr>
+    <tr th:each="genre : ${genres}">
+        <td th:text="${genre.id}"></td>
+        <td th:text="${genre.name}"></td>
+        <td>
+            <a th:href="@{/genres/{id}(id=${genre.id})}">Подробнее</a>
+            <a th:href="@{/genres/delete/{id}(id=${genre.id})}">Удалить</a>
+        </td>
+    </tr>
+</table>
+
+<a href="/genres/add">Добавить жанр</a>
+
+</body>
+</html>

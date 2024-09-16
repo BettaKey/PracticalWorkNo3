@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Выданные книги</title>
+</head>
+<body>
+<h1>Список выданных книг</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Книга</th>
+        <th>Читатель</th>
+        <th>Дата выдачи</th>
+        <th>Дата возврата</th>
+        <th></th>
+    </tr>
+    <tr th:each="issuedBook : ${issuedBooks}">
+        <td th:text="${issuedBook.id}"></td>
+        <td th:text="${issuedBook.book.title}"></td>
+        <td th:text="${issuedBook.reader.name + ' ' + issuedBook.reader.surname}"></td>
+        <td th:text="${issuedBook.issueDate}"></td>
+        <td th:text="${issuedBook.returnDate}"></td>
+        <td>
+            <a th:href="@{/issuedBooks/{id}(id=${issuedBook.id})}">Подробнее</a>
+            <a th:href="@{/issuedBooks/delete/{id}(id=${issuedBook.id})}">Удалить</a>
+        </td>
+    </tr>
+</table>
+
+<a href="/issuedBooks/add">Добавить выданную книгу</a>
+
+</body>
+</html>

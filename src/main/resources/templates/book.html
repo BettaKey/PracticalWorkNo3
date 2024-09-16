@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Книга</title>
+</head>
+<body>
+<h1>Информация о книге</h1>
+
+<p><b>ID:</b>  <span th:text="${book.id}"></span></p>
+<p><b>Название:</b> <span th:text="${book.title}"></span></p>
+<p><b>Автор:</b> <span th:text="${book.author.name}"></span></p>
+<p><b>Жанр:</b> <span th:text="${book.genre.name}"></span></p>
+
+<a href="/books">Вернуться к списку книг</a>
+
+</body>
+</html>
