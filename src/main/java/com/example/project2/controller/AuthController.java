@@ -23,7 +23,7 @@ public class AuthController {
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute User user) {
-        userService.registerUser(user);  // Пароль будет кодироваться в сервисе
+        userService.registerUser(user);
         return "redirect:/login";
     }
 

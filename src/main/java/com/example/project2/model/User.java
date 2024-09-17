@@ -22,17 +22,17 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null; // Здесь вы можете вернуть роли или привилегии пользователя, если они есть.
+        return null;
     }
 
     @Override
     public String getPassword() {
-        return this.password;  // Return the actual password
+        return this.password;
     }
 
     @Override
     public String getUsername() {
-        return this.username;  // Return the actual username
+        return this.username;
     }
 
 
