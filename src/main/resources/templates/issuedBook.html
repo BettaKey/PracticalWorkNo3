@@ -14,6 +14,7 @@
 <p><b>Дата возврата:</b> <span th:text="${issuedBook.returnDate}"></span></p>
 
 <a href="/issuedBooks">Вернуться к списку выданных книг</a>
+<a th:href="@{/issuedBooks/{id}/edit(id=${issuedBook.id})}">Изменить</a>
 
 </body>
 </html>

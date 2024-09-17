@@ -66,4 +66,27 @@ public class IssuedBookController {
         issuedBookService.deleteIssuedBook(id);
         return "redirect:/issuedBooks";
     }
+
+    @GetMapping("/{id}/edit")
+    public String editIssuedBook(@PathVariable Long id, Model model) {
+        IssuedBook issuedBook = issuedBookService.getIssuedBookById(id);
+        // Получить список книг
+        List<Book> books = bookService.getAllBooks();
+        // Получить список читателей
+        List<Reader> readers = readerService.getAllReaders();
+
+        model.addAttribute("books", books);
+        model.addAttribute("readers", readers);  // Добавить атрибуты в модель
+        model.addAttribute("issuedBook", issuedBook);
+        return "editIssuedBook";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String updateIssuedBook(@Valid IssuedBook issuedBook, BindingResult bindingResult, @PathVariable Long id, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "editIssuedBook";
+        }
+        issuedBookService.saveIssuedBook(issuedBook);
+        return "redirect:/issuedBooks";
+    }
 }
