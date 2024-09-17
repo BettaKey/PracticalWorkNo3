@@ -2,7 +2,6 @@ package com.example.project2.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDate;
 
 @Entity
@@ -22,5 +21,6 @@ public class IssuedBook {
     private Reader reader;
 
     private LocalDate issueDate;
+
     private LocalDate returnDate;
 }

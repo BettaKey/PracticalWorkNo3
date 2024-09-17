@@ -4,8 +4,6 @@ import com.example.project2.model.Author;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
-import java.util.List;
-
 @Service
 public interface AuthorService {
 

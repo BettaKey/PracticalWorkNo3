@@ -4,9 +4,7 @@ import com.example.project2.model.IssuedBook;
 import com.example.project2.repository.IssuedBookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-
 
 @Service
 public class IssuedBookServiceImpl implements IssuedBookService {

@@ -4,7 +4,6 @@ import com.example.project2.model.Genre;
 import com.example.project2.repository.GenreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service

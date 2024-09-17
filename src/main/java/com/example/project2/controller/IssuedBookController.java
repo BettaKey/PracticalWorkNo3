@@ -12,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @Controller
@@ -23,10 +22,10 @@ public class IssuedBookController {
     private IssuedBookService issuedBookService;
 
     @Autowired
-    private BookService bookService;  //Добавить сюда
+    private BookService bookService;
 
     @Autowired
-    private ReaderService readerService; //Добавить сюда
+    private ReaderService readerService;
 
     @GetMapping
     public String getAllIssuedBooks(Model model) {
@@ -70,13 +69,11 @@ public class IssuedBookController {
     @GetMapping("/{id}/edit")
     public String editIssuedBook(@PathVariable Long id, Model model) {
         IssuedBook issuedBook = issuedBookService.getIssuedBookById(id);
-        // Получить список книг
         List<Book> books = bookService.getAllBooks();
-        // Получить список читателей
         List<Reader> readers = readerService.getAllReaders();
 
         model.addAttribute("books", books);
-        model.addAttribute("readers", readers);  // Добавить атрибуты в модель
+        model.addAttribute("readers", readers);
         model.addAttribute("issuedBook", issuedBook);
         return "editIssuedBook";
     }

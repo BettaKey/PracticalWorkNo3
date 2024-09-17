@@ -1,4 +1,5 @@
 package com.example.project2.controller;
+
 import com.example.project2.model.Genre;
 import com.example.project2.service.GenreService;
 import jakarta.validation.Valid;
@@ -7,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @Controller
