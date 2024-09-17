@@ -53,4 +53,20 @@ public class AuthorController {
         authorService.deleteAuthor(id);
         return "redirect:/authors";
     }
+
+    @GetMapping("/{id}/edit")
+    public String editAuthor(@PathVariable Long id, Model model) {
+        Author author = authorService.getAuthorById(id);
+        model.addAttribute("author", author);
+        return "editAuthor";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String updateAuthor(@Valid Author author, BindingResult bindingResult, @PathVariable Long id, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "editAuthor";
+        }
+        authorService.saveAuthor(author);
+        return "redirect:/authors";
+    }
 }

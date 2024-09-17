@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Изменить жанр</title>
+</head>
+<body>
+<h1>Изменить жанр</h1>
+<form th:action="@{/genres/{id}/edit(id=${genre.id})}" method="post" th:object="${genre}">
+  <label for="name">Название:</label>
+  <input type="text" th:field="*{name}" id="name" required><br><br>
+
+  <input type="submit" value="Сохранить">
+</form>
+</body>
+</html>

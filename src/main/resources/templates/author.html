@@ -11,6 +11,7 @@
 <p><b>Имя:</b> <span th:text="${author.name}"></span></p>
 
 <a href="/authors">Вернуться к списку авторов</a>
+<a th:href="@{/authors/{id}/edit(id=${author.id})}">Изменить</a>
 
 </body>
 </html>

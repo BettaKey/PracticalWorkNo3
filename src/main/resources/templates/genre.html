@@ -11,6 +11,7 @@
 <p><b>Название:</b> <span th:text="${genre.name}"></span></p>
 
 <a href="/genres">Вернуться к списку жанров</a>
+<a th:href="@{/genres/{id}/edit(id=${genre.id})}">Изменить</a>
 
 </body>
 </html>

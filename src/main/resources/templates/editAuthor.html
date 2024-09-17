@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменить автора</title>
+</head>
+<body>
+<h1>Изменить автора</h1>
+<form th:action="@{/authors/{id}/edit(id=${author.id})}" method="post" th:object="${author}">
+    <label for="name">Имя:</label>
+    <input type="text" th:field="*{name}" id="name" required><br><br>
+
+    <input type="submit" value="Сохранить">
+</form>
+</body>
+</html>

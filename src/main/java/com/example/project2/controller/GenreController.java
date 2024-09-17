@@ -51,4 +51,20 @@ public class GenreController {
         genreService.deleteGenre(id);
         return "redirect:/genres";
     }
+
+    @GetMapping("/{id}/edit")
+    public String editGenre(@PathVariable Long id, Model model) {
+        Genre genre = genreService.getGenreById(id);
+        model.addAttribute("genre", genre);
+        return "editGenre";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String updateGenre(@Valid Genre genre, BindingResult bindingResult, @PathVariable Long id, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "editGenre";
+        }
+        genreService.saveGenre(genre);
+        return "redirect:/genres";
+    }
 }
