@@ -1,5 +1,6 @@
-package com.example.project2.service;
+package com.example.project2.config;
 
+import com.example.project2.service.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -12,7 +13,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import com.example.project2.model.CustomUserDetails;
 
 
 @Configuration
@@ -54,7 +54,7 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         return username -> userService.findByUsername(username)
-                .map(CustomUserDetails::new)
+                .map(MyUserDetails::new)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 

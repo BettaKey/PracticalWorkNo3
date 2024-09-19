@@ -1,15 +1,16 @@
-package com.example.project2.model;
+package com.example.project2.config;
 
+import com.example.project2.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-public class CustomUserDetails implements UserDetails {
+public class MyUserDetails implements UserDetails {
 
     private final User user;
 
-    public CustomUserDetails(User user) {
+    public MyUserDetails(User user) {
         this.user = user;
     }
 
